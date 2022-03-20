@@ -9,19 +9,19 @@
 void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
-        case 0:
+        case _QWERTY:
             oled_write_ln_P(PSTR("Default"), false);
             break;
-        case 1:
+        case _LOWER:
             oled_write_ln_P(PSTR("Lower"), false);
             break;
-        case 2:
+        case _RAISE:
             oled_write_ln_P(PSTR("Raise"), false);
             break;
-        case 3:
+        case _GAME:
             oled_write_ln_P(PSTR("Game"), false);
             break;
-        case 4:
+        case _FKEYS:
             oled_write_ln_P(PSTR("FKeys"), false);
             break;
     }
